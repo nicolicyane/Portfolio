@@ -23,6 +23,10 @@ npm start
 
 For production, point `SITE_URL` at the public HTTPS origin and run `npm start` with `NODE_ENV=production` on a Node host. Configure `HOST` and `PORT` to match the host. The inquiry endpoint requires a server runtime. Serve traffic over HTTPS through the host or reverse proxy.
 
+### Vercel
+
+This project uses a small Node.js server rather than Next.js. The included `vercel.json` selects Vercel’s **Other** framework preset, builds the server, serves `public/` as static assets, and routes page requests through a Node.js Function. Keep the Vercel Root Directory set to the repository root (the folder containing `package.json`), and set `SITE_URL` to the deployed HTTPS URL. Add `RESEND_API_KEY`, `CONTACT_FROM_EMAIL`, and `CONTACT_TO_EMAIL` in Vercel’s environment settings to enable contact form delivery. Vercel project settings that force the Next.js framework should be cleared or set to **Other**.
+
 ## Design and interaction
 
 The current visual direction follows the free Asher Vale template by Asad Khaleel. It uses the existing local portfolio content in a light layout with a central portrait, an animated name, a compact menu, a pinned horizontal directory on Home and a two-column gallery on Work. The title loops continuously, pauses on keyboard focus and stays still with reduced motion. [Asher Vale template](https://www.framer.com/marketplace/templates/asher-vale/)
